@@ -1,0 +1,30 @@
+<!--Clients-->
+<section id="clients" class="scrollto clearfix">
+    <div class="row clearfix">
+
+        <div class="col-3">
+
+            <div class="section-heading">
+                <h3>TRUST</h3>
+                <h2 class="section-title">Companies who use our services</h2>
+                <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam!</p>
+            </div>
+
+        </div>
+
+        <div class="col-2-3">
+            @for (client of clients; track client) {
+
+                <a href="#" class="col-3">
+                    <img [src]="client.src" alt="Company"/>
+                    <div class="client-overlay"><span>{{client.name}}</span></div>
+                </a>
+            }
+
+        </div>
+
+    </div>
+</section>
+<!--End of Clients-->
