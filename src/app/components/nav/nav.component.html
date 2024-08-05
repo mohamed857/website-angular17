@@ -1,88 +1,33 @@
 <div id="header" class="nav-collapse">
     <div class="row clearfix">
         <div class="col-1">
-
-            <!--Logo-->
             <div id="logo">
-
-                <!--Logo that is shown on the banner-->
-                <img  src="./assets/images/logo.png" id="banner-logo" alt="Landing Page"/>
-                <!-- <h1 id="banner-logo"><a routerLink="/home"> RAMADAN </a></h1> -->
-                <!--End of Banner Logo-->
-
-                <!--The Logo that is shown on the sticky Navigation Bar-->
-                <img src="./assets/images/logo1.png" id="navigation-logo" alt="Landing Page"/>
-                <!-- <h1 id="navigation-logo"><a routerLink="/home">RAMADAN</a></h1> -->
-                <!--End of Navigation Logo-->
-
+                <img src="./assets/images/logo.png" id="banner-logo" alt="Landing Page" />
+                <img src="./assets/images/logo1.png" id="navigation-logo" alt="Landing Page" />
             </div>
-            <!--End of Logo-->
-
             <aside>
-
-                <!--Social Icons in Header-->
                 <ul class="social-icons">
+                    @for (link of links; track link.id) {
                     <li>
-                        <a target="_blank" title="Facebook" href="https://www.facebook.com/profile.php?id=100005251680064">
-                            <i class="fa fa-facebook fa-1x"></i><span>Facebook</span>
+                        <a target="_blank" [title]="link.title" [href]="link.href">
+                            <i [class]="link.icon"></i><span>{{link.title}}</span>
                         </a>
                     </li>
-                    <li>
-                        <a target="_blank" title="Google+" href="https://myaccount.google.com/personal-info?hl=en">
-                            <i class="fa fa-google-plus fa-1x"></i><span>Google+</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" title="Twitter" href="https://twitter.com/elcessy_m">
-                            <i class="fa fa-twitter fa-1x"></i><span>Twitter</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" title="Instagram" href="https://www.instagram.com/elceessy546/">
-                            <i class="fa fa-instagram fa-1x"></i><span>Instagram</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" title="behance" href="https://www.behance.net/mohamedelcessy">
-                            <i class="fa fa-behance fa-1x"></i><span>Behance</span>
-                        </a>
-                    </li>
+                    }
                 </ul>
-                <!--End of Social Icons in Header-->
-
             </aside>
-
-            <!--Main Navigation-->
             <nav id="nav-main">
                 <ul>
+                    @for (page of pages; track page.id) {
                     <li>
-                        <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+                        <a [routerLink]="page.path" routerLinkActive="active"
+                            ariaCurrentWhenActive="page">{{page.title}}</a>
                     </li>
-                    <li>
-                        <a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">About</a>
-                    </li>
-                    <li>
-                        <a routerLink="/gallery" routerLinkActive="active" ariaCurrentWhenActive="page">Gallery</a>
-                    </li>
-                    <li>
-                        <a routerLink="/services" routerLinkActive="active" ariaCurrentWhenActive="page">Services</a>
-                    </li>
-                    <li>
-                        <a routerLink="/testimonials" routerLinkActive="active" ariaCurrentWhenActive="page">Testimonials</a>
-                    </li>
-                    <li>
-                        <a routerLink="/clients" routerLinkActive="active" ariaCurrentWhenActive="page">Clients</a>
-                    </li>
-                    <li>
-                        <a routerLink="/pricing" routerLinkActive="active" ariaCurrentWhenActive="page">Pricing</a>
-                    </li>
+                    }
                 </ul>
             </nav>
-            <!--End of Main Navigation-->
-
             <div id="nav-trigger"><span></span></div>
             <nav id="nav-mobile"></nav>
-
         </div>
     </div>
-</div><!--End of Header-->
+</div>
